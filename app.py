@@ -58,7 +58,7 @@ uploaded_file = st.file_uploader("Pilih gambar luka (JPG/PNG)", type=["jpg", "jp
 if uploaded_file is not None:
     # Baca dan tampilkan gambar
     img = Image.open(uploaded_file)
-    st.image(img, caption='Gambar yang diupload', use_column_width=True)
+    st.image(img, caption='Gambar yang diupload', use_container_width=True)
 
     # Preprocess gambar
     img = img.resize((224, 224))  # harus sama seperti saat training
