@@ -16,18 +16,31 @@ from PIL import Image
 import base64
 
 # Styling modern pakai CSS
+# Tambahkan custom CSS dengan tema biru klinis kalem dan bentuk dekoratif
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 html, body, [class*="css"]  {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #f2f2f2, #dff6f0);
+    background: linear-gradient(135deg, #e6f0f8, #cde6f7);
     color: #1c1c1c;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.1;
+    z-index: -1;
+}
+
 h1 {
-    color: #146356;
+    color: #226ea0;
     font-size: 2.5rem;
     text-align: center;
     margin-top: 20px;
