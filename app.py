@@ -83,7 +83,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Judul aplikasi
-st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="wide")
+st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="centered")
 st.markdown("<h1>Klasifikasi Cedera Ringan</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center;'>Upload gambar cedera untuk mengetahui jenisnya (lecet, memar, atau bengkak)</p>", unsafe_allow_html=True)
 
