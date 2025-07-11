@@ -17,23 +17,33 @@ from PIL import Image
 # Styling modern pakai CSS
 # Tambahkan custom CSS dengan tema biru klinis kalem dan bentuk dekoratif
 st.markdown("""
-        <style>
+    <style>
+    /* Import Google Font */
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-    html, body, [class*="css"]  {
+    /* Global styles */
+    html, body, [class*="css"] {
         font-family: 'Roboto', sans-serif;
         background: linear-gradient(to bottom, #eaf4fc, #ffffff);
         color: #003366;
     }
-    
-     .block-container {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-            background-repeat: repeat;
-            background-size: 400px;
+
+    /* Layout container */
+    .block-container {
+        max-width: 100% !important;
+        padding: 2rem 5rem;
+        background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+        background-repeat: repeat;
+        background-size: 400px;
     }
-        
+
+    @media (max-width: 768px) {
+        .block-container {
+            padding: 1rem;
+        }
+    }
+
+    /* Main content styling */
     .main {
         background-color: rgba(255, 255, 255, 0.9);
         padding: 2rem;
@@ -41,32 +51,47 @@ st.markdown("""
         box-shadow: 0 0 15px rgba(0,0,0,0.05);
     }
 
+    /* Heading style */
     h1 {
         color: #005b96;
         text-align: center;
+        font-size: 2.5rem;
     }
 
-    .stButton>button {
-        background-color: #005b96;
-        color: white;
-        font-weight: bold;
-        border-radius: 8px;
-        padding: 0.5em 1em;
+    /* Paragraph styling */
+    p {
+        text-align: center;
+        font-size: 1.1rem;
     }
 
+    /* File uploader */
     .stFileUploader {
         border: 2px dashed #89c2d9;
         background-color: #f0faff;
         padding: 1em;
         border-radius: 10px;
     }
+
+    /* Buttons */
+    .stButton>button {
+        background-color: #005b96;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        padding: 0.5em 1.2em;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .stButton>button:hover {
+        background-color: #004b80;
+    }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
+
 
 # Judul aplikasi
-st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="centered")
+st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="wide")
 st.markdown("<h1>Klasifikasi Cedera Ringan</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center;'>Upload gambar cedera untuk mengetahui jenisnya (lecet, memar, atau bengkak)</p>", unsafe_allow_html=True)
 
