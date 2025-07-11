@@ -13,11 +13,49 @@ import streamlit as st
 import numpy as np
 import tensorflow as tf
 from PIL import Image
+import base64
+
+# Styling modern pakai CSS
+st.markdown("""
+    <style>
+    .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .subtitle {
+        font-size: 16px;
+        text-align: center;
+        color: #34495e;
+        margin-bottom: 20px;
+    }
+    .footer {
+        text-align: center;
+        font-size: 13px;
+        color: #95a5a6;
+        margin-top: 40px;
+    }
+    .stButton>button {
+        background-color: #3498db;
+        color: white;
+        border-radius: 8px;
+        padding: 0.5rem 1.5rem;
+        border: none;
+        font-weight: bold;
+    }
+    .stButton>button:hover {
+        background-color: #2980b9;
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # Judul aplikasi
 st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="centered")
-st.title("Klasifikasi Cedera Ringan")
-st.write("Upload gambar cedera untuk klasifikasi jenisnya (lecet, memar, atau bengkak).")
+st.markdown('<div class="title">📷 Klasifikasi Cedera Ringan</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Upload atau ambil gambar cedera (lecet, memar, bengkak)</div>', unsafe_allow_html=True)
 
 # Load model
 @st.cache_resource
