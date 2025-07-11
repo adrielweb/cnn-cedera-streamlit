@@ -13,51 +13,50 @@ import streamlit as st
 import numpy as np
 import tensorflow as tf
 from PIL import Image
-import base64
 
 # Styling modern pakai CSS
 # Tambahkan custom CSS dengan tema biru klinis kalem dan bentuk dekoratif
-st.markdown("""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-html, body, [class*="css"]  {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #e6f0f8, #cde6f7);
-    color: #1c1c1c;
-}
+    html, body, [class*="css"]  {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to bottom, #eaf4fc, #ffffff);
+        color: #003366;
+    }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-    opacity: 0.1;
-    z-index: -1;
-}
+    .main {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
 
-h1 {
-    color: #226ea0;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 20px;
-}
+    h1 {
+        color: #005b96;
+        text-align: center;
+    }
 
-.uploadedFileName {
-    color: #444;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    text-align: center;
-}
+    .stButton>button {
+        background-color: #005b96;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        padding: 0.5em 1em;
+    }
 
-footer {
-    visibility: hidden;
-}
-</style>
-""", unsafe_allow_html=True)
+    .stFileUploader {
+        border: 2px dashed #89c2d9;
+        background-color: #f0faff;
+        padding: 1em;
+        border-radius: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Judul aplikasi
 st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="centered")
