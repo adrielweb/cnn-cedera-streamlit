@@ -73,8 +73,8 @@ if uploaded_file is not None:
     confidence = np.max(prediction[0]) * 100
     label = label_map[pred_index]
 
-# Tampilkan hasil prediksi
-st.success(f"Hasil Prediksi: {label.capitalize()} ({confidence:.2f}%)")
-
-# Tampilkan saran berdasarkan hasil prediksi
-st.info(saran_penanganan(label))
+    # Tampilkan hasil prediksi
+    st.success(f"Hasil Prediksi: {label.capitalize()} ({confidence:.2f}%)")
+    
+    # Tampilkan saran berdasarkan hasil prediksi
+    st.info(saran_penanganan(label))
