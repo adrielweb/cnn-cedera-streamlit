@@ -1,0 +1,6 @@
+Daftar library yang digunakan:
+
+tensorflow==2.13.0
+numpy
+pillow
+streamlit
