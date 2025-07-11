@@ -1,6 +1,6 @@
 Daftar library yang digunakan:
 
-tensorflow==2.13.0
+tensorflow
 numpy
 pillow
 streamlit
