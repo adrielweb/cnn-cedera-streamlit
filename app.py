@@ -18,53 +18,46 @@ from PIL import Image
 # Tambahkan custom CSS dengan tema biru klinis kalem dan bentuk dekoratif
 st.markdown("""
     <style>
-    /* Import Google Font */
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-    /* Global styles */
+    /* Terapkan ke seluruh halaman */
     html, body, [class*="css"] {
         font-family: 'Roboto', sans-serif;
         background: linear-gradient(to bottom, #eaf4fc, #ffffff);
         color: #003366;
+        margin: 0;
+        padding: 0;
     }
 
-    /* Layout container */
+    /* Container utama */
     .block-container {
         max-width: 100% !important;
-        padding: 2rem 5rem;
+        padding: 3rem 6rem;
         background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
         background-repeat: repeat;
         background-size: 400px;
+        min-height: 100vh;
     }
 
     @media (max-width: 768px) {
         .block-container {
-            padding: 1rem;
+            padding: 1.5rem;
         }
     }
 
-    /* Main content styling */
-    .main {
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.05);
-    }
-
-    /* Heading style */
+    /* Judul dan paragraf */
     h1 {
         color: #005b96;
         text-align: center;
         font-size: 2.5rem;
     }
 
-    /* Paragraph styling */
     p {
         text-align: center;
         font-size: 1.1rem;
     }
 
-    /* File uploader */
+    /* Uploader */
     .stFileUploader {
         border: 2px dashed #89c2d9;
         background-color: #f0faff;
@@ -72,7 +65,7 @@ st.markdown("""
         border-radius: 10px;
     }
 
-    /* Buttons */
+    /* Tombol */
     .stButton>button {
         background-color: #005b96;
         color: white;
@@ -88,7 +81,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 # Judul aplikasi
 st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="wide")
