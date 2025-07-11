@@ -17,45 +17,39 @@ import base64
 
 # Styling modern pakai CSS
 st.markdown("""
-    <style>
-    .title {
-        font-size: 32px;
-        font-weight: 700;
-        color: #2c3e50;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .subtitle {
-        font-size: 16px;
-        text-align: center;
-        color: #34495e;
-        margin-bottom: 20px;
-    }
-    .footer {
-        text-align: center;
-        font-size: 13px;
-        color: #95a5a6;
-        margin-top: 40px;
-    }
-    .stButton>button {
-        background-color: #3498db;
-        color: white;
-        border-radius: 8px;
-        padding: 0.5rem 1.5rem;
-        border: none;
-        font-weight: bold;
-    }
-    .stButton>button:hover {
-        background-color: #2980b9;
-        color: white;
-    }
-    </style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html, body, [class*="css"]  {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f2f2f2, #dff6f0);
+    color: #1c1c1c;
+}
+
+h1 {
+    color: #146356;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.uploadedFileName {
+    color: #444;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+footer {
+    visibility: hidden;
+}
+</style>
 """, unsafe_allow_html=True)
 
 # Judul aplikasi
 st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="centered")
-st.markdown('<div class="title">📷 Klasifikasi Cedera Ringan</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Upload atau ambil gambar cedera (lecet, memar, bengkak)</div>', unsafe_allow_html=True)
+st.markdown("<h1>Klasifikasi Cedera Ringan</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;'>Upload gambar cedera untuk mengetahui jenisnya (lecet, memar, atau bengkak)</p>", unsafe_allow_html=True)
 
 # Load model
 @st.cache_resource
@@ -112,7 +106,7 @@ if uploaded_file is not None:
     label = label_map[pred_index]
 
     # Tampilkan hasil prediksi
-    st.success(f"Hasil Prediksi: {label.capitalize()} ({confidence:.2f}%)")
+    st.success(f"Hasil Prediksi: {label.capitalize()}")
     
     # Tampilkan saran berdasarkan hasil prediksi
     st.info(saran_penanganan(label))
