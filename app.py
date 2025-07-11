@@ -17,27 +17,53 @@ from PIL import Image
 # Styling modern pakai CSS
 # Tambahkan custom CSS dengan tema biru klinis kalem dan bentuk dekoratif
 st.markdown("""
-    <style>
-        html, body, [class*="css"] {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f2f9ff;
-        }
-        .block-container {
+        <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    html, body, [class*="css"]  {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to bottom, #eaf4fc, #ffffff);
+        color: #003366;
+    }
+    
+     .block-container {
             padding-top: 2rem;
             padding-bottom: 2rem;
             background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
             background-repeat: repeat;
             background-size: 400px;
-        }
-        h1 {
-            color: #228be6;
-        }
-        .stButton>button {
-            background-color: #228be6;
-            color: white;
-        }
+    }
+        
+    .main {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        color: #005b96;
+        text-align: center;
+    }
+
+    .stButton>button {
+        background-color: #005b96;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        padding: 0.5em 1em;
+    }
+
+    .stFileUploader {
+        border: 2px dashed #89c2d9;
+        background-color: #f0faff;
+        padding: 1em;
+        border-radius: 10px;
+    }
     </style>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 # Judul aplikasi
 st.set_page_config(page_title="Klasifikasi Cedera Ringan", layout="centered")
