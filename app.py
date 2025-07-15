@@ -20,24 +20,22 @@ st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-    html, body {
+    /* Terapkan ke seluruh halaman */
+    html, body, [class*="css"] {
         font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to bottom, #eaf4fc, #ffffff);
+        color: #003366;
         margin: 0;
         padding: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, #eaf4fc, #ffffff);
+    }
+
+    /* Container utama */
+    .block-container {
+        padding: 3rem 6rem;
         background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
         background-repeat: repeat;
         background-size: 400px;
-    }
-
-    .block-container {
-        padding: 3rem 6rem;
         min-height: 100vh;
-        background-color: rgba(255, 255, 255, 0.85); /* semi-transparan */
-        border-radius: 12px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     }
 
     @media (max-width: 768px) {
@@ -46,6 +44,7 @@ st.markdown("""
         }
     }
 
+    /* Judul dan paragraf */
     h1 {
         color: #005b96;
         text-align: center;
@@ -57,6 +56,7 @@ st.markdown("""
         font-size: 1.1rem;
     }
 
+    /* Uploader */
     .stFileUploader {
         border: 2px dashed #89c2d9;
         background-color: #f0faff;
@@ -64,6 +64,7 @@ st.markdown("""
         border-radius: 10px;
     }
 
+    /* Tombol */
     .stButton>button {
         background-color: #005b96;
         color: white;
