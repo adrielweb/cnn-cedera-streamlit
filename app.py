@@ -120,7 +120,7 @@ def saran_penanganan(label):
         return "Saran tidak tersedia untuk jenis luka ini."
 
 # Upload gambar
-uploaded_file = st.file_uploader("Pilih gambar luka (JPG/PNG)", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload gambar cedera (JPG/PNG)", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     # Baca dan tampilkan gambar
