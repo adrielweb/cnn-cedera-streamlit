@@ -89,7 +89,7 @@ st.markdown("<p style='text-align:center;'>Upload gambar cedera untuk mengetahui
 # Load model
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("mobilenetv2_final_model.keras")  # ganti path sesuai tempat file .h5 disimpan
+    model = tf.keras.models.load_model("mobilenet_cnn_model.h5")  # ganti path sesuai tempat file .h5 disimpan
     return model
 
 model = load_model()
